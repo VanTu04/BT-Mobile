@@ -1,11 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Square from './Components/Square';
+import { useState } from 'react';
+import CustomButton from './Components/CustomButton';
 
 export default function App() {
+
+  const [bgColor, setBgColor] = useState('white');
+
   return (
-    <View style={styles.container}>
-      <Square title="Hello, world" />
-      {/* <Text>Hello</Text> */}
+    <View style={[styles.container, {backgroundColor: bgColor}]}>
+      <CustomButton title="Red" titleColor='white' backgroundColor="red" onPress={setBgColor}/>
+      <CustomButton title="Green" titleColor='white' backgroundColor="green" onPress={setBgColor}/>
+      <CustomButton title="Blue" titleColor='white' backgroundColor="blue" onPress={setBgColor}/>
+      <CustomButton title="Yellow" titleColor='back' backgroundColor="yellow" onPress={setBgColor}/>
+      <CustomButton title="Pink" titleColor='red' backgroundColor="pink" onPress={setBgColor}/>
     </View>
   );
 }
