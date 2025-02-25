@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const LoginForm = () => {
+const LoginScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isValid, setIsValid] = useState(true);
+  const navigation = useNavigation();
 
   const validatePhoneNumber = (number) => {
     const phoneRegex = /^[0-9]{10}$/;
@@ -17,7 +19,9 @@ const LoginForm = () => {
 
   const handleSubmit = () => {
     if (validatePhoneNumber(phoneNumber)) {
-      Alert.alert('Số điện thoại hợp lệ', 'Đăng nhập thành công!');
+      Alert.alert('Số điện thoại hợp lệ', 'Đăng nhập thành công!', [
+        { text: 'OK', onPress: () => navigation.navigate('Home', { phoneNumber }) } // Điều hướng
+      ]);
     } else {
       Alert.alert('Lỗi', 'Số điện thoại không hợp lệ.');
     }
@@ -77,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginForm;
+export default LoginScreen;

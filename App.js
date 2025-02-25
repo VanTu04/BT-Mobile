@@ -1,13 +1,19 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import LoginForm from './Components/LoginForm';
+import LoginScreen from './Screens/LoginScreen';
+import HomeScreen from './Screens/HomeScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-
-
   return (
-    <SafeAreaView style={styles.container}>
-      <LoginForm />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Đăng Nhập' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Trang Chủ' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
