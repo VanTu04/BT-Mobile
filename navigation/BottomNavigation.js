@@ -46,7 +46,7 @@ export default BottomTabNavigator;
 const styles = StyleSheet.create({
   tabBar: {
     position: "absolute",
-    height: 80,
+    height: 118,
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     backgroundColor: "#fff",
@@ -57,12 +57,13 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   tabBarItem: {
-    justifyContent: "center",
-    alignItems: "center",
+    top: 40
   },
   iconContainer: {
     padding: 12,
     borderRadius: 20,
+    width:50,
+    height: 50
   },
   activeTab: {
     backgroundColor: "#D0EDFBCC",
