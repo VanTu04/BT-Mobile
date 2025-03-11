@@ -1,24 +1,9 @@
-import React, { useContext } from 'react';
-import { AppContext, AppProvider } from './Context/AppContext';
-import { NavigationContainer } from '@react-navigation/native';
-import MainStack from './Stack/MainStack';
-import AuthStack from './Stack/AuthStack';
+import React from 'react';
+import StackNavigator from './navigation/StackNavigation';
 
-const App = () => {
-  const { isLoggedIn } = React.useContext(AppContext);
-
-  return (
-    <NavigationContainer>
-      {isLoggedIn ? <MainStack /> : <AuthStack />}
-    </NavigationContainer>
-  );
-};
-
-export default () => (
-  <AppProvider>
-    <App />
-  </AppProvider>
-);
+export default function App() {
+  return <StackNavigator />;
+}
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
