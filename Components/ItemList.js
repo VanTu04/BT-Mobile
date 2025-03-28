@@ -1,18 +1,30 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, FlatList, Image, Text, StyleSheet } from 'react-native';
+import { View, FlatList, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const ItemList = ({ data }) => {
+// Dữ liệu các mục phổ biến
+const popularItems = [
+  { id: "1", name: "Burger", image: require("../assets/Rectangle 29.png") },
+  { id: "2", name: "Pizza", image: require("../assets/Rectangle 33.png") },
+];
+
+const ItemList = () => {
+  const navigation = useNavigation(); // Use the hook to get the navigation object
+
   return (
     <FlatList
       horizontal
-      data={data}
+      data={popularItems}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
-        <View style={styles.item}>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate("tabStack", { product: item })}
+        >
           <Image source={item.image} style={styles.image} />
           <Text style={styles.name}>{item.name}</Text>
           {item.price && <Text style={styles.price}>{item.price}$</Text>}
-        </View>
+        </TouchableOpacity>
       )}
     />
   );
@@ -20,12 +32,14 @@ const ItemList = ({ data }) => {
 
 const styles = StyleSheet.create({
   item: {
-    margin: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
     alignItems: 'center',
   },
   image: {
-    width: 150,
-    height: 100,
+    width: 190,
+    height: 120,
     borderRadius: 10,
   },
   name: {

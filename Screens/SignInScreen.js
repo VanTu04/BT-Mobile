@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from 'reac
 import { AppContext } from '../Context/AppContext';
 
 const SignInScreen = ({ navigation }) => {
-  const { setIsLoggedIn, setUserEmail } = useContext(AppContext);
+  const setIsLoggedIn = true;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
