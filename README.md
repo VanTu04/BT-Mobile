@@ -1,5 +1,5 @@
 ## Nguyễn Văn Tú - 22810310083
-## buổi thực hành 28/3
-![bt5](./assets/z6452352561290_589d8be8de9fba28e8caa48a16ca8447.jpg)
-![bt5](./assets/z6452352565315_e9b9aeaca0657919d0e00942acb4b003.jpg)
-![bt5](./assets/z6452352574954_86462b15215b5b76b2a96b35f2f99336.jpg)
+## buổi thực hành 29/3
+![bt5](./assets/z6453801813027_24d628d198f44ad973f831001ea104f1.jpg)
+![bt5](./assets/z6453801823550_e6fad1b89ff7c2170c127c225c3d058e.jpg)
+![bt5](./assets/z6453801822832_b51e6fae1d479ddc108bc0029a37402d.jpg)
