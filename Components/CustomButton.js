@@ -1,26 +1,26 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const CustomButton = ({ title, titleColor = 'white', backgroundColor = 'blue', onPress}) => {
+const CustomButton = ({ title, onPress }) => {
   return (
-    <TouchableOpacity
-      style={[styles.button, {backgroundColor }]}
-      onPress={() => onPress(backgroundColor)}
-    >
-      <Text style={[styles.text, {color: titleColor}]}>{title}</Text>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      {/* Đảm bảo text được bọc trong <Text> */}
+      <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
   button: {
-    padding: 15,
-    borderRadius: 10,
+    backgroundColor: '#007bff',
+    paddingVertical: 15,
+    borderRadius: 5,
     alignItems: 'center',
-    marginVertical: 5,
-    width: "100%",
-
+    marginVertical: 10,
   },
-  text: {
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
     fontWeight: 'bold',
   },
 });
