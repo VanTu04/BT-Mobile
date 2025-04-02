@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-const NumberScreen = ({ navigation, route }) => {
+import { Alert } from 'react-native';
+const Number = ({ navigation, route }) => {
   const [phoneNumber, setPhoneNumber] = useState(route.params?.phoneNumber || '');
 
   const handleNumberPress = (number) => {
@@ -184,4 +185,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NumberScreen;
+export default Number;

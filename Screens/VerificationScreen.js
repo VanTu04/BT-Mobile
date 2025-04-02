@@ -69,7 +69,7 @@ const VerificationScreen = ({ navigation, route }) => {
 
           <TouchableOpacity 
             style={[styles.nextButton, code.length === 4 ? styles.nextButtonActive : {}]} 
-            onPress={handleVerify}
+            onPress={()=>navigation.navigate('Location')}
             disabled={code.length < 4}
           >
             <Icon name="arrow-forward" size={30} color="#fff" />
