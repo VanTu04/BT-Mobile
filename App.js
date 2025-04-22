@@ -1,6 +1,26 @@
 import React from 'react';
-import UserScreen from './screens/UserScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import SearchScreen from './screens/SearchScreen';
+import FiltersScreen from './screens/FiltersScreen';
 
 export default function App() {
-  return <UserScreen />;
+
+  const Stack = createStackNavigator();
+  return (
+  <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Search" 
+          component={SearchScreen} 
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen 
+          name="Filters" 
+          component={FiltersScreen} 
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
